@@ -2,6 +2,7 @@ import path from 'path'
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import { createUser, readUser, updateUser } from './crud.js'
 
 // Intialize dot env
 dotenv.config()
@@ -47,3 +48,12 @@ if (process.env.NODE_ENV === 'production') {
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, console.log(`Server is running on Port 5000`))
+
+// CREATE
+createUser()
+
+// update
+updateUser()
+
+// READ
+readUser()
